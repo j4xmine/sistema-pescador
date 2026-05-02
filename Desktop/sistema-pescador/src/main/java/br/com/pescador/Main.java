@@ -90,10 +90,8 @@ public class Main {
                     String op = input.nextLine().toLowerCase();
                     if(op.equals("s")) {
                         service.deletarPescador(pescador);
-                        System.out.println("Pescador deletado.");
                     } else {
                         System.out.println("Pescador não deletado.");
-                        return;
                     }
                 } else {
                     System.out.println("Pescador não encontrado.");
