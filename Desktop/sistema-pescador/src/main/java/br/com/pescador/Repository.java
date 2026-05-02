@@ -79,8 +79,8 @@ public class Repository {
     }
 
     // DELETE (remover o cadastro do pescador)
-    public void removerCadastro(Pescador pescador) {
-        collection.deleteOne(new Document("_id", pescador.getId()));
+    public void deletarPescador(Pescador pescador) {
+        collection.deleteOne(new Document("cpf", pescador.getCpf()));
     }
 
 }

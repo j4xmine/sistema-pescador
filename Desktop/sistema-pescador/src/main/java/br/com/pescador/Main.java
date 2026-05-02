@@ -82,6 +82,15 @@ public class Main {
                         System.out.println("Dados atualizados com sucesso.");
                     }
                 }
+            } else if(escolhaMenu == 3) {
+                System.out.print("Insira o CPF para deletar: ");
+                String cpf = input.nextLine();
+                Pescador pescador = service.procurarPescador(cpf);
+                if(pescador != null) {
+                    service.deletarPescador(pescador);
+                } else {
+                    System.out.println("Pescador não encontrado.");
+                }
             } else if(escolhaMenu == 4) {
                 System.out.println("========== LISTAR PESCADORES CADASTRADOS ==========");
                 List<Pescador> pescadores = service.listarPescadores();
@@ -115,12 +124,7 @@ public class Main {
                             "2 - DELETAR PESCADOR%n" +
                             "3 - PESQUISAR OUTRO CPF%n");
                     } else {
-                        while(pescadorEncontrado == null || !pescadorEncontrado.equals("0")) {
-                            System.out.println("Pescador não encontrado! Tente novamente.");
-                            System.out.print("CPF: ");
-                            cpf = input.nextLine();
-                            pescadorEncontrado = service.procurarPescador(cpf);
-                        }
+                        System.out.println("CPF inválido. Tente novamente.");
                     }
                 }
 
