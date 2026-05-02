@@ -15,7 +15,7 @@ public class Repository {
         this.collection = MongoConnection.getDatabase().getCollection("pescadores");
     }
 
-    // CREATE (cadastrar)
+    // cadastrar
     public void salvar(Pescador pescador) {
         // chave, valor
         Document doc = new Document("nome", pescador.getNome());
@@ -28,7 +28,7 @@ public class Repository {
         collection.insertOne(doc);
     }
 
-    // READ (listar os pescadores)
+    // listar os pescadores
     public List<Pescador> listarPescadores() {
         List<Pescador> pescadores = new ArrayList<>();
 
@@ -47,7 +47,7 @@ public class Repository {
         return pescadores;
     }
 
-    // READ (buscar por cpf)
+    // buscar por cpf
     public Pescador procurarPescador(String cpf) {
         Pescador p = new Pescador();
         Document doc = collection.find(new Document("cpf", cpf)).first();
@@ -64,7 +64,7 @@ public class Repository {
         }
     }
 
-    // UPDATE (atualizar)
+    //  atualizar
     public void atualizarDados(Pescador pescador) {
         // seleciona quem será atualizado (feito através de um dado, como o CPF)
         collection.updateOne(
@@ -78,7 +78,7 @@ public class Repository {
         );
     }
 
-    // DELETE (remover o cadastro do pescador)
+    // remover o cadastro do pescador
     public void deletarPescador(Pescador pescador) {
         collection.deleteOne(new Document("cpf", pescador.getCpf()));
     }
