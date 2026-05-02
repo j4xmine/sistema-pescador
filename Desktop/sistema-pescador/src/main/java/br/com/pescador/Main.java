@@ -10,8 +10,7 @@ import java.util.Scanner;
 //        String senha = "roma12@";
 //        String data = "01/01/1991";
 //        String telefone = "83 9 8140-1717";
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

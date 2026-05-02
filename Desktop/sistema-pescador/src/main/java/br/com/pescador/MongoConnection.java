@@ -6,7 +6,7 @@ import com.mongodb.client.MongoDatabase; // REPRESENTA O BANCO DE DADOS AQUI NO 
 
 public class MongoConnection {
 
-    private static final String URI = "mongodb+srv://adminpesca:admin4225@cluster-pesca.0qk3uqt.mongodb.net/?appName=cluster-pesca";
+    private static final String URI = System.getenv("MONGO_URI");
 
     // método que retorna o banco de dados
     public static MongoDatabase getDatabase() {
